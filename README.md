@@ -55,6 +55,7 @@ python app.py
 Öffne nun deinen Browser und rufe http://localhost:5000 auf! 🎉
 
 ## 📂 Projektstruktur
+```
 Krypto_Dashboard/
 ├── app.py                     # Der Flask-Webserver (Einstiegspunkt)
 ├── miner_funktionen.py        # Logik für API-Abfragen & Datenverarbeitung
@@ -69,3 +70,4 @@ Krypto_Dashboard/
 │   └── main.js                # JavaScript für Live-Updates & Sortierung
 └── templates/                 # HTML-Vorlagen
     └── dashboard.html         # Das Grundgerüst der Webseite
+```
