@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Miner Live-Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <h1>Mining Operations Live</h1>
+
+<h2>Solo Miner Farm</h2>
+    <table>
+        <thead>
+            <tr>
+                <th class="sortable" onclick="setSort('name')">Miner / IP <span id="sort-name" class="sort-arrow"></span></th>
+                <th class="sortable" onclick="setSort('coin')">Coin <span id="sort-coin" class="sort-arrow"></span></th>
+                <th class="sortable" onclick="setSort('hashRate')">Hashrate <span id="sort-hashRate" class="sort-arrow"></span></th>
+                <th class="sortable" onclick="setSort('power')">Strom <span id="sort-power" class="sort-arrow"></span></th>
+                <th>Effizienz</th>
+                <th class="sortable" onclick="setSort('temp')">Temp / Lüfter <span id="sort-temp" class="sort-arrow"></span></th>
+                <th class="sortable" onclick="setSort('bestDiff')">Best Diff 🎯 <span id="sort-bestDiff" class="sort-arrow"></span></th>
+                <th>Blöcke 🏆</th>
+                <th class="sortable" onclick="setSort('uptime')">Uptime ⏱️ <span id="sort-uptime" class="sort-arrow"></span></th>
+            </tr>
+        </thead>
+        <tbody id="solo-table-body">
+            <tr><td colspan="9" style="text-align: center;">Lade Live-Daten...</td></tr>
+        </tbody>
+    </table>
+
+    <h2>Pool Miner Farm</h2>
+    <table>
+        <thead>
+            <tr>
+                <th class="sortable" onclick="setSort('name')">Miner / IP <span id="sort-name" class="sort-arrow"></span></th>
+                <th class="sortable" onclick="setSort('coin')">Coin <span id="sort-coin" class="sort-arrow"></span></th>
+                <th class="sortable" onclick="setSort('hashRate')">Hashrate <span id="sort-hashRate" class="sort-arrow"></span></th>
+                <th class="sortable" onclick="setSort('power')">Strom <span id="sort-power" class="sort-arrow"></span></th>
+                <th>Effizienz</th>
+                <th class="sortable" onclick="setSort('temp')">Temp / Lüfter <span id="sort-temp" class="sort-arrow"></span></th>
+                <th>Shares (Acc / Rej) 📉</th>
+                <th class="sortable" onclick="setSort('uptime')">Uptime ⏱️ <span id="sort-uptime" class="sort-arrow"></span></th>
+            </tr>
+        </thead>
+        <tbody id="pool-table-body">
+            <tr><td colspan="8" style="text-align: center;">Lade Live-Daten...</td></tr>
+        </tbody>
+    </table>
+
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+
+</body>
+</html>

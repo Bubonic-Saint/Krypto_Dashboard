@@ -1,0 +1,8 @@
+{
+  "SOLO_MINERS": [
+    {"name": "Mein_Erster_Miner", "ip": "192.168.1.100", "coin": "BTC"}
+  ],
+  "POOL_MINERS": [
+    {"name": "Mein_Pool_Miner", "ip": "192.168.1.101", "coin": "BTC"}
+  ]
+}
