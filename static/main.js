@@ -67,10 +67,22 @@ function calcEfficiency(power, ghs) {
 
 // Formatiert die Uptime (Sekunden) in Stunden und Minuten
 function formatUptime(seconds) {
-    if (!seconds) return "0h 0m";
-    let h = Math.floor(seconds / 3600);
-    let m = Math.floor((seconds % 3600) / 60);
-    return `${h}h ${m}m`;
+    if (!seconds || seconds <= 0) return "0m";
+
+    // Die Mathematik dahinter (mit Abrunden)
+    let y = Math.floor(seconds / 31536000); // 1 Jahr = 365 Tage
+    let d = Math.floor((seconds % 31536000) / 86400); // 1 Tag = 86400 Sekunden
+    let h = Math.floor((seconds % 86400) / 3600); // 1 Stunde = 3600 Sekunden
+    let m = Math.floor((seconds % 3600) / 60); // 1 Minute = 60 Sekunden
+
+    // Text zusammenbauen (nur anzeigen, was auch größer als 0 ist)
+    let result = "";
+    if (y > 0) result += y + "y ";
+    if (d > 0) result += d + "d ";
+    if (h > 0) result += h + "h ";
+    result += m + "m";
+
+    return result.trim();
 }
 
 // Macht riesige Zahlen (wie die Difficulty) mit Tausendertrennzeichen lesbar
