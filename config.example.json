@@ -5,6 +5,5 @@
   "POOL_MINERS": [
     {"name": "Mein_Pool_Miner", "ip": "192.168.1.101", "coin": "BTC"}
   ],
-
-    "DISCORD_WEBHOOK_URL": "YOUR_DISCORD_WEBHOOK_URL_HERE"
+  "DISCORD_WEBHOOK_URL": "YOUR_DISCORD_WEBHOOK_URL_HERE"
 }
