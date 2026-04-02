@@ -11,8 +11,8 @@ Ein leichtgewichtiges, lokales Web-Dashboard zur Überwachung von Solo- und Pool
 * **Zwei Kategorien:** Getrennte Tabellen für Solo-Miner (Fokus auf Best Diff & Blöcke) und Pool-Miner (Fokus auf Accepted/Rejected Shares).
 * **Nachtwächter-Modus:** Ein Hintergrund-Thread prüft alle 60 Sekunden den Status.
 * **Discord-Alarme:**
-* Sofortige Benachrichtigung bei Block-Fund (Solo-Miner).
-* Alarmierung, wenn ein Miner länger als 10 Minuten offline ist.
+  * Sofortige Benachrichtigung bei Block-Fund (Solo-Miner).
+  * Alarmierung, wenn ein Miner länger als 10 Minuten offline ist.
 * **Headless-Betrieb:** Optimiert für den Raspberry Pi Zero 2 W.
 ---
 
