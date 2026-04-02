@@ -1,5 +1,7 @@
 from flask import Flask, render_template, jsonify
 from miner_funktionen import get_miner_data
+from nachtwaechter import starte_nachtwaechter
+import threading
 import json
 import os
 
@@ -11,7 +13,6 @@ app = Flask(__name__)
 SOLO_MINERS = []
 POOL_MINERS = []
 
-# Prüfen, ob die config.json existiert
 if os.path.exists('config.json'):
     with open('config.json', 'r', encoding='utf-8') as f:
         config = json.load(f)
@@ -39,8 +40,10 @@ def live_daten():
         daten = get_miner_data(miner['ip'])
         pool_daten.append({"info": miner, "daten": daten})
 
-    #
     return jsonify({"solo": solo_daten, "pool": pool_daten})
 
 if __name__ == '__main__':
+    waechter_thread = threading.Thread(target=starte_nachtwaechter, args=(SOLO_MINERS, POOL_MINERS), daemon=True)
+    waechter_thread.start()
+
     app.run(host='0.0.0.0', port=5000)
